@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import {Link} from "react-router-dom";
+import {Link, Redirect } from "react-router-dom";
 import Top from "./Top";
 import { useDispatch } from "react-redux";
 import { withRouter } from 'react-router-dom';
@@ -41,6 +41,8 @@ function Login(props){
                 web_id: data.WEB_ID,
                 password: data.PASSWORD,
             });
+            alert(data.message);
+            window.location.href="/";
         } else {
             setLoginStatus(false);
             console.log(data);

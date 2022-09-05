@@ -4,29 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2713dc4e-76a9-4cce-afc4-9dee0a10a993" name="Changes" comment="220904">
-      <change afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Menu_View.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Menu_list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user_action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="2713dc4e-76a9-4cce-afc4-9dee0a10a993" name="Changes" comment="220905">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbconfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/dbconfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Top.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Top.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +83,16 @@
       <workItem from="1662173038942" duration="3463000" />
       <workItem from="1662258849378" duration="21362000" />
       <workItem from="1662336316030" duration="24426000" />
-      <workItem from="1662385421763" duration="1233000" />
+      <workItem from="1662385421763" duration="5490000" />
     </task>
+    <task id="LOCAL-00001" summary="220905">
+      <created>1662387069940</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662387069940</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +111,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="220904" />
-    <option name="LAST_COMMIT_MESSAGE" value="220904" />
+    <MESSAGE value="220905" />
+    <option name="LAST_COMMIT_MESSAGE" value="220905" />
   </component>
 </project>

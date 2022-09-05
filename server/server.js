@@ -10,6 +10,8 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const form_data = multer();
 const cookieParser=require("cookie-parser");
+const httpProxy = require('http-proxy');
+const proxy = httpProxy.createServer({});
 
 app.use(cors());
 
@@ -78,8 +80,10 @@ oracledb.getConnection(dbConfig,function(err,con){
 
 app.use('/', express.static( path.join(__dirname, 'build') ) );
 
-app.get('/', function(request, response){
-    response.sendFile( path.join(__dirname, '../public/index.html') );
+app.get('/', function(req, res){
+    res.sendFile( path.join(__dirname, '../public/index.html') );
+    proxy.web(req,res, {target:'http://localhost:3000/'});
+
     console.log("메인페이지");
 });
 
@@ -180,6 +184,7 @@ app.post("/login", async (req, res) => {
             console.log("session:User:    ", req.session.user);
             console.log("session:User:    ", req.session.isLoggedIn);
             res.status(200).send({message: "로그인 성공"});
+
             //----------------------session ---------------------------
         } else {
             console.log("USER password not correct 🤬");
