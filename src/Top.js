@@ -8,17 +8,22 @@ function Top(){
         <>
         <div className="container">
             <div>
-                <ul>
-                    <li>
-                        <Link to='/login'>로그인</Link>
+                <ul className="nav justify-content-end">
+                    <li className="nav-item">
+                        <Link className="nav-link" to='/login'>로그인</Link>
                     </li>
-                    <li>
-                        <Link to="/signupAgree">회원가입</Link>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/signupAgree">회원가입</Link>
                     </li>
                 </ul>
             </div>
-            <nav className="navbar navbar-expand-sm bg-light">
+            <nav className="navbar navbar-expand-sm bg-light justify-content-center">
                 <ul className="navbar-nav">
+                    <li className="nav-item" >
+                        <p>
+                            <Link className="nav-link text-dark" to="/">Hansot</Link>
+                        </p>
+                    </li>
                     <li className="nav-item dp1">
                         <p>
                             <a className="nav-link text-dark" href="">
@@ -48,7 +53,7 @@ function Top(){
                         <div className="dp2">
                             <ul>
                                 <li>
-                                    <a href="">전체 메뉴</a>
+                                    <Link to="/menu_list">전체 메뉴</Link>
                                 </li>
                             </ul>
                         </div>

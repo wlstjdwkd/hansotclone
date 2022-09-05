@@ -2,47 +2,74 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import './App.css';
 import Top from "./Top";
+import main from "./main";
 import Login from "./Login";
+import { useEffect } from "react";
 
 function App() {
+    // window.onload = () => {
+    //     let bg = document.querySelector(".main_hansot .main_hansot_bg");
+    //     console.log(bg);
+    //     bg.addEventListener("mouseenter", (event) => {
+    //         event.target.classList.add("on");
+    //         console.log("mouseenter");
+    //     });
+    //     bg.addEventListener("mouseleave", (event) => {
+    //         event.target.classList.remove("on");
+    //         console.log("mouseleave");
+    //     });
+    // };
+
     return (<>
             <Top> </Top>
 
             <div className="container">
+                {/*위에 두개*/}
                 <div className="row justify-content-md-center">
                     <div className="col-md-6">
-                        <div className="col-md-12 bg-secondary">
-                        <span>
-                            <img src={require('./img/main01.jpg')}/>
-                        </span>
-                            <p>
-                            <span className="d-block">
-                                가격 이상의 가치가 담긴
-                            </span>
-                                <span className="d-block">
-                                다양한 메뉴를 확인해 보세요
-                            </span>
-
-                            </p>
-                            <span>한솥 메뉴</span>
+                        <div className="col-md-12 bg-secondary area_sc">
+                            <figure>
+                                <span>
+                                    <img src={require('./img/main01.jpg')}/>
+                                </span>
+                                <figcaption>
+                                    <p>
+                                        <span className="d-block">
+                                            가격 이상의 가치가 담긴
+                                        </span>
+                                        <span className="d-block">
+                                            다양한 메뉴를 확인해 보세요
+                                        </span>
+                                    </p>
+                                    <span>한솥 메뉴</span>
+                                </figcaption>
+                            </figure>
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="col-md-12 bg-secondary">
-                            <img src={require('./img/main02.jpg')}/>
-                            <p>
-                            <span className="d-block">
-                                갓 지은 한끼가 기다리고 있는
-                            </span>
-                                <span className="d-block">
-                                가까운 한솥 매장을 찾아보세요
-                            </span>
-                            </p>
-                            <span>주변 점포 찾기</span>
+                        <div className="col-md-12 bg-secondary area_sc">
+                            <figure>
+                                <span>
+                                    <img src={require('./img/main02.jpg')}/>
+                                </span>
+                                <figcaption>
+                                    <p>
+                                        <span className="d-block">
+                                            갓 지은 한끼가 기다리고 있는
+                                        </span>
+                                        <span className="d-block">
+                                            가까운 한솥 매장을 찾아보세요
+                                        </span>
+                                    </p>
+                                    <span>주변 점포 찾기</span>
+                                </figcaption>
+                            </figure>
+
                         </div>
                     </div>
                 </div>
                 <br/>
+                {/*가운데 세개*/}
                 <div className="row justify-content-md-center">
                     <div className="col-12 col-sm-4">
                         <div className="col-12 bg-warning">
@@ -101,25 +128,30 @@ function App() {
                     </div>
                 </div>
                 <br/>
+                {/*길쭉 배경*/}
+                <div className="main_hansot">
+                    <div className="main_hansot_bg">
 
+                    </div>
+                    <div className="col-12 col-sm-3 main_cont_wrap">
+                        <div className="col-12 bg-secondary main_info">
+                            <div className="h2_info">
+                                <h2>
+                                    <span className="d-block text-light">든든한 솥밥을 위해</span>
+                                    <span className="d-block text-light">한솥이 지키고,</span>
+                                    <span className="d-block text-light">키워가는 것들</span>
+                                </h2>
+                                <p>
+                                    <span className="d_block text-light">한솥은 '따끈한 도시락으로 지역사회에 공헌한다' 라는</span>
+                                    <span className="d_block text-light">기업이념 아래, 고객 이익을 최우선으로 하며 엄선된</span>
+                                    <span className="d_block text-light">좋은 식재료만 사용하는 대한민국 외식종합기업 시장을</span>
+                                    <span className="d_block text-light">리드하는 글로벌 종합외식기업 입니다.</span>
+                                </p>
+                                <span>
+                                <a href="" className="text-light">브랜드 철학</a>
+                            </span>
+                            </div>
 
-                <div className="bg-image">
-                    <div className="col-12 col-sm-3 main-hansot">
-                        <div className="col-12 bg-secondary">
-                            <h2>
-                                <span className="d-block text-light">든든한 솥밥을 위해</span>
-                                <span className="d-block text-light">한솥이 지키고,</span>
-                                <span className="d-block text-light">키워가는 것들</span>
-                            </h2>
-                            <p>
-                                <span className="d_block text-light">한솥은 '따끈한 도시락으로 지역사회에 공헌한다' 라는</span>
-                                <span className="d_block text-light">기업이념 아래, 고객 이익을 최우선으로 하며 엄선된</span>
-                                <span className="d_block text-light">좋은 식재료만 사용하는 대한민국 외식종합기업 시장을</span>
-                                <span className="d_block text-light">리드하는 글로벌 종합외식기업 입니다.</span>
-                            </p>
-                            <span>
-                            <a href="" className="text-light">브랜드 철학</a>
-                        </span>
                         </div>
 
                     </div>
