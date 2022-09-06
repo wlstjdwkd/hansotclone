@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import {BrowserRouter, Link, Route, Routes, Routes as Router} from "react-router-dom";
+import {BrowserRouter, Link, Route, Routes as Router} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import Login from "./Login";
 import { useCookies } from 'react-cookie';
 
@@ -21,10 +22,12 @@ function Top(){
     const removeCookieFunc= () =>{
         removeCookie('id');
         result=null;
+        window.location.reload();
     }
 
     const [member, setMember]= useState("");
     const authenticated = member != null;
+
     return(
         <>
         <div className="container">
@@ -33,7 +36,7 @@ function Top(){
                     { result ?
                         (   <ul className="nav justify-content-end">
                         <li className="nav-item">
-                        <Link className="nav-link" to="/">로그아웃</Link>
+                        <Link className="nav-link" to="/" onClick={removeCookieFunc}>로그아웃</Link>
                     </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/">마이페이지</Link>
