@@ -1,10 +1,11 @@
 import React, { useState,useEffect } from "react";
 import {Link, Redirect } from "react-router-dom";
 import Top from "./Top";
+import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 import { withRouter } from 'react-router-dom';
 
-function Login(props){
+function Login({authenticated}){
     // const dispatch = useDispatch();
 
     const [web_id,setWeb_id] = useState("");
@@ -14,6 +15,20 @@ function Login(props){
         web_id: "",
         password: "",
     });
+    const [cookies,setCookie,removeCookie] = useCookies(['id']);
+
+    useEffect(()=>{
+        getCookieFunc();
+    },[]);
+
+    const setCookieFunc = () =>{
+        // let random = Math.floor(Math.random() * (10 - 0) + 0);
+        setCookie('id',web_id,{maxAge:2000});
+    }
+    const getCookieFunc = (param) =>{
+        let result = "getCookie : "+cookies.id;
+    }
+
     // const [loggedInInfo, setLoggedInInfo]=useState({
     //
     // })
@@ -42,6 +57,7 @@ function Login(props){
                 password: data.PASSWORD,
             });
             alert(data.message);
+            setCookieFunc();
             window.location.href="/";
         } else {
             setLoginStatus(false);

@@ -171,6 +171,7 @@ app.post("/login", async (req, res) => {
 
         if (comparePW) {
             //----------------------session ---------------------------
+            //로그인 성공
             console.log("USER can Login 😍");
             console.log("USER: ", Member);
             console.log("session::    ", req.session);
@@ -183,6 +184,8 @@ app.post("/login", async (req, res) => {
             req.session.isLoggedIn = true;
             console.log("session:User:    ", req.session.user);
             console.log("session:User:    ", req.session.isLoggedIn);
+
+            res.cookie("web_id",web_id);
             res.status(200).send({message: "로그인 성공"});
 
             //----------------------session ---------------------------

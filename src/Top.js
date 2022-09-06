@@ -2,19 +2,50 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import {BrowserRouter, Link, Route, Routes, Routes as Router} from "react-router-dom";
 import Login from "./Login";
+import { useCookies } from 'react-cookie';
 
 function Top(){
+    //이런식
+    //{authenticated ? (<로그아웃 버튼>) : (<로그인 버튼 >)}
+
+    const [cookies, setCookie, removeCookie] =useCookies(['test']);
+    const [text,setText] = useState('');
+    let result=cookies.id;
+    let auth=false;
+    useEffect(()=>{
+        getCookieFunc();
+    },[])
+    const getCookieFunc = (param)=>{
+        setText(result);
+    }
+    const removeCookieFunc= () =>{
+        removeCookie('id');
+        result=null;
+    }
+
+    const [member, setMember]= useState("");
+    const authenticated = member != null;
     return(
         <>
         <div className="container">
             <div>
                 <ul className="nav justify-content-end">
-                    <li className="nav-item">
+                    { result ?
+                        (   <ul className="nav justify-content-end">
+                        <li className="nav-item">
+                        <Link className="nav-link" to="/">로그아웃</Link>
+                    </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/">마이페이지</Link>
+                            </li>
+                        </ul>):(
+                            <ul className="nav justify-content-end">
+                            <li className="nav-item">
                         <Link className="nav-link" to='/login'>로그인</Link>
-                    </li>
-                    <li className="nav-item">
+                    </li><li className="nav-item">
                         <Link className="nav-link" to="/signupAgree">회원가입</Link>
-                    </li>
+                        </li>
+                            </ul>)}
                 </ul>
             </div>
             <nav className="navbar navbar-expand-sm bg-light justify-content-center">

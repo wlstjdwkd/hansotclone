@@ -33,9 +33,11 @@ function Signup(props){
         console.log("res: ", res);
         const data = await res.json();
         if (res.ok) {
+            //회원가입 성공
             setRegErrStatus(false);
             alert(data.message);
             console.log(data);
+            
         } else {
             if (res.status === 400) {
                 console.log("data: ", data);
