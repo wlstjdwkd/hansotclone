@@ -20,10 +20,6 @@ function Menu_list(props){
     //     navigate(`/menu_view?id=${menu_id}`,{ state:state[0] })
     // }
 
-    const onMenu_viewe = async(e)=>{
-
-    }
-
     const rendering = () =>{
         const result = [];
         for (let i=0; i< state.length; i++){

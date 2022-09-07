@@ -197,7 +197,6 @@ app.post("/login", async (req, res) => {
         console.log("USER not exists 🥵");
         res.status(401).send({ message: "USER not exists 🥵" });
     }
-
 })
 
 //메뉴 조회
@@ -241,6 +240,12 @@ app.get("/menu_view", (req,res)=>{
             res.send(result);
         }
     })
+})
+
+//주문
+app.post("/order", (req,res)=>{
+    console.log("주문 백 받음");
+
 })
 
 app.listen(5000,function (){

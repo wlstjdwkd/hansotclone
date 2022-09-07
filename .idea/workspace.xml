@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2713dc4e-76a9-4cce-afc4-9dee0a10a993" name="Changes" comment="220907 option view">
+    <list default="true" id="2713dc4e-76a9-4cce-afc4-9dee0a10a993" name="Changes" comment="220907 not need file delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user_action.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu_View.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu_View.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,7 @@
       <workItem from="1662336316030" duration="24426000" />
       <workItem from="1662385421763" duration="5528000" />
       <workItem from="1662423415949" duration="20058000" />
-      <workItem from="1662509199938" duration="15232000" />
+      <workItem from="1662509199938" duration="19371000" />
     </task>
     <task id="LOCAL-00001" summary="220905">
       <created>1662387069940</created>
@@ -126,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662528654463</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="220907 not need file delete">
+      <created>1662528997864</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1662528997864</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +160,7 @@
     <MESSAGE value="220906 로그아웃 완료" />
     <MESSAGE value="220907 menu_view" />
     <MESSAGE value="220907 option view" />
-    <option name="LAST_COMMIT_MESSAGE" value="220907 option view" />
+    <MESSAGE value="220907 not need file delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="220907 not need file delete" />
   </component>
 </project>
