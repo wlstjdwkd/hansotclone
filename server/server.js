@@ -245,8 +245,29 @@ app.get("/menu_view", (req,res)=>{
 //주문
 app.post("/order", (req,res)=>{
     console.log("주문 백 받음");
+    var member_id=req.body.member_id;
+    var menu_id=req.body.menu_id;
+    var order_date = req.body.order_date;
 
-})
+    conn.execute("insert into order1 values (order1_seq.nextval,'" + member_id + "','" + menu_id + "','" + "'to_char(sysdate,'yyyy.mm.dd hh24:mi')'" + "')", function (err, result) {
+        if (err) {
+            console.log("등록중 에러가 발생했어요!!", err);
+            res.status(401).send({message: "주문 실패"});
+
+            res.writeHead(500, {"ContentType": "text/html"});
+            res.end("fail!!");
+        } else {
+            //주문 성공
+            console.log("result : ", result);
+
+            res.writeHead(200, {"ContentType": "text/html"});
+
+            res.status(200).send({message: "주문 성공"});
+
+
+        }
+    });
+});
 
 app.listen(5000,function (){
     console.log('listening on 5000');

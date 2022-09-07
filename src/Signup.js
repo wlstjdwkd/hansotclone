@@ -70,10 +70,9 @@ function Signup(props){
                             개인정보 입력
                         </h3>
                         <p>
-                    <span className="d-block">
-                        간단한 개인정보를 입력해주시면 회원가입이 완료됩니다.
-                    </span>
-
+                            <span className="d-block">
+                                간단한 개인정보를 입력해주시면 회원가입이 완료됩니다.
+                            </span>
                         </p>
                     </div>
 

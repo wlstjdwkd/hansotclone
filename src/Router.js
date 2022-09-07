@@ -15,7 +15,7 @@ function Router(){
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/menu_list" element={<Menu_list/>}/>
-                <Route path="/menu_view" element={<Menu_View/>}/>
+                <Route path="/menu_view/:menuID" element={<Menu_View/>}/>
             </Routes>
         </BrowserRouter>
     );

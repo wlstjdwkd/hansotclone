@@ -1,14 +1,25 @@
 import Top from "./Top";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 import blossom from './img/blossom.jpg';
 import azalea from './img/Azalea.jpg';
-import React from "react";
-
+import React, {useState} from "react";
+import { useCookies } from "react-cookie";
 
 function Menu_View(){
     const location = useLocation();
+    const [cookies, setCookie, removeCookie] =useCookies(['id']);
+
+    let { menuID } = useParams();
+
+    console.log("params: "+menuID);
+    let cookies_id=cookies.id;
+    console.log("쿠키아이디 : "+cookies_id);
     console.log("menu_view_state_menu: "+location.state.menu);
     console.log("menu_view_state_option: "+location.state.option);
+    const [member_id,setMember_id] = useState("");
+    const [menu_id, setMenu_id] =useState("");
+    const [order_date,setOrder_date]=useState("");
+    const [option_id,setOption_id] = useState([]);
 
     const menu=location.state.menu;
     const option = location.state.option;
@@ -22,14 +33,15 @@ function Menu_View(){
             console.log(Number(option_sum_txt.innerHTML)+Number(e.target.value));
             option_sum_txt.innerHTML = Number(option_sum_txt.innerHTML)+ Number(e.target.value);
             total.innerHTML= Number(total.innerHTML)+ Number(e.target.value);
+            setOption_id(option_id=>[...option_id, e.target.id]);
         }else{
             option_sum_txt.innerHTML = Number(option_sum_txt.innerHTML)- Number(e.target.value);
             total.innerHTML= Number(total.innerHTML) - Number(e.target.value);
-
+            //setoption빼는거 구현안했음
         }
     }
 
-    // console.log("menu_view_state: "+state.length);
+    //img_url부분인데 좀 고쳐야할듯
     let img_url;
     if(menu[0]==2){
         img_url = blossom;
@@ -39,8 +51,17 @@ function Menu_View(){
     }
 
     const onOrder = async (e)=>{
+        setMember_id(cookies_id);
+        setMenu_id(menuID);
+        const req = {
+            member_id:member_id,
+            menu_id:menu_id,
+            order_date:order_date,
+            option_id:option_id,
+        };
         const res = await fetch("http://localhost:5000/order",{
-           method:"POST",
+            method:"POST",
+            body:JSON.stringify(req),
         });
 
         const data=await res.json();
@@ -84,41 +105,46 @@ function Menu_View(){
                         {/*<img src={require('./img/newMenu1.jpg')}/>*/}
                     </div>
                     <div className="col-7">
-                        <h3>
-                            {menu[1]}
-                        </h3>
-                        <p>
-                            {menu[2]}
-                        </p>
+                        <form onSubmit={(e)=>{
+                            onOrder(e);
+                        }}>
+                            <h3>
+                                {menu[1]}
+                            </h3>
+                            <p>
+                                {menu[2]}
+                            </p>
 
-                        <div>
-                            {rendering()}
-                        {/*    option*/}
-                        </div>
+                            <div>
+                                {rendering()}
+                                {/*    option*/}
+                            </div>
 
-                        <br/>
-                        <div className="total">
-                            <dd>
+                            <br/>
+                            <div className="total">
+                                <dd>
                                 <span>
                                     {menu[4]}
                                 </span>
-                                <br/>
-                                <span id="option_sum_txt">
+                                    <br/>
+                                    <span id="option_sum_txt">
                                     0
                                 </span>
-                            </dd>
-                            <div className="price_wrap">
+                                </dd>
+                                <div className="price_wrap">
                                 <span id="total">
                                     {menu[4]}
                                 </span>
-                                {/*합계 */}
-                                <em></em>
-                                원
+                                    {/*합계 */}
+                                    <em></em>
+                                    원
+                                </div>
                             </div>
-                        </div>
-                        <button className="btn btn-primary" type="submit">
-                            주문하기
-                        </button>
+                            <button className="btn btn-primary" type="submit">
+                                주문하기
+                            </button>
+                        </form>
+
                     </div>
                 </div>
                 <div>

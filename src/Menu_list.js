@@ -23,6 +23,7 @@ function Menu_list(props){
     const rendering = () =>{
         const result = [];
         for (let i=0; i< state.length; i++){
+
             //나중에 배열로 바꾸기 너무 귀찮당
             if(i==0){
                 img_url = blossom;
@@ -41,7 +42,7 @@ function Menu_list(props){
                         data1=await res.json();
                         if(res.ok){
                             console.log("option: ", data1.rows);
-                            navigate(`/menu_view?id=${menu_id}`, {state: {
+                            navigate(`/menu_view/${menu_id}`, {state: {
                                     menu:state[i],
                                     option:data1.rows,
                             }})
@@ -58,9 +59,6 @@ function Menu_list(props){
                         <p>
                             {state[i][4]}
                         </p>
-                        {/*<button onClick="navigate(`/menu_view?id=${menu_id}`,{ state:state[i] })">*/}
-                        {/*    ㄱ.ㄱ*/}
-                        {/*</button>*/}
                     </button>
                 </div>
             );
