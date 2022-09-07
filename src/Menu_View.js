@@ -6,14 +6,34 @@ import React from "react";
 
 
 function Menu_View(){
-    const { state } = useLocation();
-    console.log("menu_view_state: "+state[1]);
+    const location = useLocation();
+    console.log("menu_view_state_menu: "+location.state.menu);
+    console.log("menu_view_state_option: "+location.state.option);
+
+    const menu=location.state.menu;
+    const option = location.state.option;
+    // console.log("menu_view_state: "+state.length);
     let img_url;
-    if(state[0]==2){
+    if(menu[0]==2){
         img_url = blossom;
     }
-    else if(state[0]==3){
+    else if(menu[0]==3){
         img_url = azalea;
+    }
+
+    const rendering = () =>{
+        const result = [];
+        for (let i=0; i<option.length;i++){
+            result.push(
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                        <label className="form-check-label" htmlFor="flexCheckDefault">
+                            {option[i][1]}     +{option[i][2]}원
+                        </label>
+                    </div>
+            );
+        }
+        return result;
     }
 
     return(
@@ -33,18 +53,20 @@ function Menu_View(){
                     </div>
                     <div className="col-7">
                         <h3>
-                            {state[1]}
+                            {menu[1]}
                         </h3>
                         <p>
-                            {state[2]}
+                            {menu[2]}
                         </p>
                         <div>
+                            {rendering()}
                         {/*    option*/}
                         </div>
+                        <br/>
                         <div className="total">
                             <dd>
                                 <span>
-                                    {state[4]}
+                                    {menu[4]}
                                 </span>
                                 <span>
                                 {/*    option 비용*/}
@@ -61,7 +83,7 @@ function Menu_View(){
                 <div>
                     <h4>열량</h4>
                     <p>
-                        {state[5]}
+                        {menu[5]}
                         <span></span>
                         Kcal
                     </p>

@@ -21,13 +21,7 @@ function Menu_list(props){
     // }
 
     const onMenu_viewe = async(e)=>{
-        const res = await fetch("http://localhost:5000/menu_view",{
-            method:"GET",
-        });
-        data1=await res.json();
-        if(res.ok){
-            console.log("menu_view")
-        }
+
     }
 
     const rendering = () =>{
@@ -44,9 +38,21 @@ function Menu_list(props){
             let menu_id=state[i][0];
             result.push(
                 <div className="col-4">
-                    <button onClick={() => {
-                        console.log(i);
-                        navigate(`/menu_view?id=${menu_id}`, {state: state[i]})
+                    <button onClick={async (e) => {
+                        const res = await fetch("http://localhost:5000/menu_view",{
+                            method:"GET",
+                        });
+                        data1=await res.json();
+                        if(res.ok){
+                            console.log("option: ", data1.rows);
+                            navigate(`/menu_view?id=${menu_id}`, {state: {
+                                    menu:state[i],
+                                    option:data1.rows,
+                            }})
+
+                        }else{
+
+                        }
                     }}>
 
                         <img src={img_url}/>
