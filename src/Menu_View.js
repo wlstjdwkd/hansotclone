@@ -1,7 +1,21 @@
 import Top from "./Top";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import blossom from './img/blossom.jpg';
+import azalea from './img/Azalea.jpg';
+import React from "react";
+
 
 function Menu_View(){
+    const { state } = useLocation();
+    console.log("menu_view_state: "+state[1]);
+    let img_url;
+    if(state[0]==2){
+        img_url = blossom;
+    }
+    else if(state[0]==3){
+        img_url = azalea;
+    }
+
     return(
         <>
         <Top></Top>
@@ -13,15 +27,16 @@ function Menu_View(){
                 </h2>
                 <div className="row">
                     <div className="col-5">
-                        {/*여기에 이미지 주소*/}
-                        <img src={require('./img/newMenu1.jpg')}/>
+                        <img src={img_url}/>
+
+                        {/*<img src={require('./img/newMenu1.jpg')}/>*/}
                     </div>
                     <div className="col-7">
                         <h3>
-                        {/*    여기에  name*/}
+                            {state[1]}
                         </h3>
                         <p>
-                        {/*    description*/}
+                            {state[2]}
                         </p>
                         <div>
                         {/*    option*/}
@@ -29,7 +44,7 @@ function Menu_View(){
                         <div className="total">
                             <dd>
                                 <span>
-                                    {/*    price*/}
+                                    {state[4]}
                                 </span>
                                 <span>
                                 {/*    option 비용*/}
@@ -46,7 +61,7 @@ function Menu_View(){
                 <div>
                     <h4>열량</h4>
                     <p>
-                        {/*calorie*/}
+                        {state[5]}
                         <span></span>
                         Kcal
                     </p>

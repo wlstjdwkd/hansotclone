@@ -37,7 +37,8 @@ function Signup(props){
             setRegErrStatus(false);
             alert(data.message);
             console.log(data);
-            
+            window.location.href="/";
+
         } else {
             if (res.status === 400) {
                 console.log("data: ", data);

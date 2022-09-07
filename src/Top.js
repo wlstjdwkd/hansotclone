@@ -5,14 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import Login from "./Login";
 import { useCookies } from 'react-cookie';
 
+
 function Top(){
-    //이런식
-    //{authenticated ? (<로그아웃 버튼>) : (<로그인 버튼 >)}
 
     const [cookies, setCookie, removeCookie] =useCookies(['test']);
     const [text,setText] = useState('');
     let result=cookies.id;
     let auth=false;
+    let data1;
+    const navigate = useNavigate();
     useEffect(()=>{
         getCookieFunc();
     },[])
@@ -25,8 +26,30 @@ function Top(){
         window.location.reload();
     }
 
-    const [member, setMember]= useState("");
-    const authenticated = member != null;
+    const [menu_list,setMenu_List] = useState([]);
+    const onMenu_list= async (e)=>{
+        // e.preventDefault();
+        const res= await fetch("http://localhost:5000/menu_list",{
+            method:"GET",
+
+        });
+        data1=await res.json();
+        // data1=data1.stringify();
+        if (res.ok) {
+            console.log("menu: ", data1);
+            console.log(data1.rows.length);
+            console.log(data1.rows[0][1]);
+            navigate('/menu_list', { state:data1.rows });
+            // window.location.replace("/menu_list");
+            // alert(data.message);
+        } else {
+            // console.log(data);
+            // alert(data.message);
+        }
+    }
+    // useEffect(()=>{
+    //
+    // },[]);
 
     return(
         <>
@@ -87,7 +110,7 @@ function Top(){
                         <div className="dp2">
                             <ul>
                                 <li>
-                                    <Link to="/menu_list">전체 메뉴</Link>
+                                    <button onClick={onMenu_list}>전체 메뉴</button>
                                 </li>
                             </ul>
                         </div>

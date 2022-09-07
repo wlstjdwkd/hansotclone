@@ -16,7 +16,7 @@ const createStoreWidthMiddleware = applyMiddleware(
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
       {/*<Provider store={createStoreWidthMiddleware(*/}
       {/*    // 리듀서를 생성후 넣어준다*/}
       {/*    //*/}
@@ -26,5 +26,5 @@ root.render(
       {/*)}>*/}
           <Router />
       {/*</Provider>*/}
-  </React.StrictMode>
+  </>
 );

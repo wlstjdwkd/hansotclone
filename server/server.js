@@ -200,6 +200,49 @@ app.post("/login", async (req, res) => {
 
 })
 
+//메뉴 조회
+app.get("/menu_list" , (req,res)=>{
+//    select * from menu;
+    console.log("메뉴 조회 백 받음");
+    conn.execute("select * from menu", function (err, result) {
+        if (err) {
+            console.log("메뉴 조회중 에러가 발생했어요!!", err);
+            res.status(401).send({message: "메뉴 조회 실패"});
+            res.writeHead(500, {"ContentType": "text/html"});
+            res.end("fail!!");
+        } else {
+            //메뉴 조회 성공
+            console.log("result : ", result);
+            //res.status(200).send({message: "메뉴조회 성공"});
+
+            // res.writeHead(200, {"ContentType": "text/html"});
+
+            res.send(result);
+        }
+    });
+})
+
+//메뉴 상세 조회
+app.get("/menu_view", (req,res)=>{
+    console.log("메뉴 상세 조회 백 받음");
+    conn.execute("select * from option1", function (err,result){
+        if (err) {
+            console.log("메뉴 상세 조회중 에러가 발생했어요!!", err);
+            res.status(401).send({message: "메뉴 상세 조회 실패"});
+            res.writeHead(500, {"ContentType": "text/html"});
+            res.end("fail!!");
+        } else {
+            //메뉴 상세 조회 성공
+            console.log("result : ", result);
+            //res.status(200).send({message: "메뉴조회 성공"});
+
+            // res.writeHead(200, {"ContentType": "text/html"});
+
+            res.send(result);
+        }
+    })
+})
+
 app.listen(5000,function (){
     console.log('listening on 5000');
 })
