@@ -267,6 +267,8 @@ app.post("/order", (req,res)=>{
             console.log("주문 성공");
             console.log("result : ", result);
 
+
+
             // res.writeHead(200, {"ContentType": "text/html"});
 
             res.status(200).send({message: "주문 성공"});
@@ -281,7 +283,7 @@ app.post("/myPage",(req,res)=>{
 
     console.log("마이페이지 백 받음");
     console.log("멤버아이디: "+req.body.member_id);
-    conn.execute("select o.order_date, m.name, m.price from order1 o, (select name, price from menu where menu_id=(select distinct menu_id from order1 where member_id=:1)) m where member_id=:1 ",[memberID] ,function (err,result){
+    conn.execute("select o.order_date, m.name, m.price from menu m join order1 o on m.menu_id= o.menu_id where member_id = :1",[memberID] ,function (err,result){
         if (err) {
             console.log("마이페이지 조회 중 에러가 발생했어요!!", err);
             res.status(401).send({message: "메뉴 조회 실패"});

@@ -8,6 +8,7 @@ function Mypage(){
         const result = [];
         for(let i=0; i<state.length; i++){
             result.push(
+                //todo: option
                 //내용
                 <div className="row d-flex text-center bg-secondary align-items-center ">
                     <div className="border col-2">

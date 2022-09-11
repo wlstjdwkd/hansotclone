@@ -34,6 +34,7 @@ function Menu_View(){
             option_sum_txt.innerHTML = Number(option_sum_txt.innerHTML)+ Number(e.target.value);
             total.innerHTML= Number(total.innerHTML)+ Number(e.target.value);
             setOption_id(option_id=>[...option_id, e.target.id]);
+
         }else{
             option_sum_txt.innerHTML = Number(option_sum_txt.innerHTML)- Number(e.target.value);
             total.innerHTML= Number(total.innerHTML) - Number(e.target.value);
@@ -54,6 +55,7 @@ function Menu_View(){
     ////////////////////////////
     const onOrder = async (e)=>{
         //e.preventDefault();
+        console.log("option: "+option_id.length);
 
         console.log("onOrder front");
         e.preventDefault();
