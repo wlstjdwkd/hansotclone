@@ -23,7 +23,6 @@ function Login({authenticated}){
 
     const setCookieFunc = () =>{
         // let random = Math.floor(Math.random() * (10 - 0) + 0);
-        setCookie('id',web_id,{maxAge:2000});
     }
     const getCookieFunc = (param) =>{
         let result = "getCookie : "+cookies.id;
@@ -57,7 +56,8 @@ function Login({authenticated}){
                 password: data.PASSWORD,
             });
             alert(data.message);
-            setCookieFunc();
+            setCookie('id',data.id,{maxAge:2000});
+
             window.location.href="/";
         } else {
             setLoginStatus(false);

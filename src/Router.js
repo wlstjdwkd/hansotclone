@@ -1,10 +1,11 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import App from './App';
-import Login from './Login';
-import Signup from "./Signup";
-import SignupAgree from "./SignupAgree";
-import Menu_list from "./Menu_list";
-import Menu_View from "./Menu_View";
+import App from './routes/App';
+import Login from './routes/Login';
+import Signup from "./routes/Signup";
+import SignupAgree from "./routes/SignupAgree";
+import Menu_list from "./routes/Menu_list";
+import Menu_View from "./routes/Menu_View";
+import Mypage from "./routes/Mypage";
 
 function Router(){
     return(
@@ -16,6 +17,7 @@ function Router(){
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/menu_list" element={<Menu_list/>}/>
                 <Route path="/menu_view/:menuID" element={<Menu_View/>}/>
+                <Route path="/myPage" element={<Mypage/>}/>
             </Routes>
         </BrowserRouter>
     );

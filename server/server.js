@@ -109,7 +109,7 @@ app.post("/signup",async (req, res) => {
             console.log("result : ", result);
             res.status(200).send({message: "회원가입 성공"});
 
-            res.writeHead(200, {"ContentType": "text/html"});
+            //res.writeHead(200, {"ContentType": "text/html"});
             res.end("success!!");
         }
     });
@@ -158,6 +158,7 @@ app.post("/login", async (req, res) => {
                     if (err) {
                         reject(err);
                     } else {
+                        //성공
                         resolve(...result.rows);
                     }
                 }
@@ -182,11 +183,13 @@ app.post("/login", async (req, res) => {
             };
             req.session.user = sessionUser;
             req.session.isLoggedIn = true;
-            console.log("session:User:    ", req.session.user);
-            console.log("session:User:    ", req.session.isLoggedIn);
+            console.log("member_id:    ", Member.MEMBER_ID);
 
-            res.cookie("web_id",web_id);
-            res.status(200).send({message: "로그인 성공"});
+            // res.cookie("web_id",Member.member_id);
+
+            res.status(200).send({message: "로그인 성공",
+                id:Member.MEMBER_ID,
+            });
 
             //----------------------session ---------------------------
         } else {
@@ -247,25 +250,31 @@ app.post("/order", (req,res)=>{
     console.log("주문 백 받음");
     var member_id=req.body.member_id;
     var menu_id=req.body.menu_id;
-    var order_date = req.body.order_date;
+    var nowdate= "to_char(sysdate,'yyyy.mm.dd hh24:mi')";
 
-    conn.execute("insert into order1 values (order1_seq.nextval,'" + member_id + "','" + menu_id + "','" + "'to_char(sysdate,'yyyy.mm.dd hh24:mi')'" + "')", function (err, result) {
+
+    console.log("order number", member_id,menu_id);
+    // var order_date = req.body.order_date;
+
+
+
+
+    conn.execute("insert into order1(order1_id, order_date, member_id, menu_id) values (order1_seq.nextval, to_char(sysdate,'yyyy.mm.dd hh24:mi'), '" + member_id + "','" + menu_id + "')", function (err, result) {
         if (err) {
             console.log("등록중 에러가 발생했어요!!", err);
             res.status(401).send({message: "주문 실패"});
 
-            res.writeHead(500, {"ContentType": "text/html"});
             res.end("fail!!");
         } else {
             //주문 성공
+            console.log("주문 성공");
             console.log("result : ", result);
 
-            res.writeHead(200, {"ContentType": "text/html"});
+            // res.writeHead(200, {"ContentType": "text/html"});
 
             res.status(200).send({message: "주문 성공"});
-
-
-        }
+            //res.writeHead(200, {"ContentType": "text/html"});
+            res.end("success!!");        }
     });
 });
 

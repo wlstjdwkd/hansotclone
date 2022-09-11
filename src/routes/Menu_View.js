@@ -1,7 +1,7 @@
 import Top from "./Top";
 import {Link, useLocation, useParams} from "react-router-dom";
-import blossom from './img/blossom.jpg';
-import azalea from './img/Azalea.jpg';
+import blossom from '../img/blossom.jpg';
+import azalea from '../img/Azalea.jpg';
 import React, {useState} from "react";
 import { useCookies } from "react-cookie";
 
@@ -50,24 +50,31 @@ function Menu_View(){
         img_url = azalea;
     }
 
+
+    ////////////////////////////
     const onOrder = async (e)=>{
-        setMember_id(cookies_id);
-        setMenu_id(menuID);
+        //e.preventDefault();
+
+        console.log("onOrder front");
+        e.preventDefault();
+        console.log(member_id);
         const req = {
-            member_id:member_id,
-            menu_id:menu_id,
-            order_date:order_date,
-            option_id:option_id,
+            member_id:cookies_id,
+            menu_id:menuID,
+            // order_date:order_date,
+            // option_id:option_id,
         };
         const res = await fetch("http://localhost:5000/order",{
             method:"POST",
+            headers: { "Content-Type": "application/json"},
             body:JSON.stringify(req),
         });
 
         const data=await res.json();
         if(res.ok) {
             //주문 성공
-
+            alert(data.message);
+            window.location.href="/";
         }else{
 
         }

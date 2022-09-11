@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 import React, { useState, useEffect } from 'react';
 import {BrowserRouter, Link, Route, Routes as Router} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
@@ -62,7 +62,7 @@ function Top(){
                         <Link className="nav-link" to="/" onClick={removeCookieFunc}>로그아웃</Link>
                     </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">마이페이지</Link>
+                                <Link className="nav-link" to="/myPage">마이페이지</Link>
                             </li>
                         </ul>):(
                             <ul className="nav justify-content-end">
@@ -83,7 +83,7 @@ function Top(){
                     </li>
                     <li className="nav-item dp1">
                         <p>
-                            <a className="nav-link text-dark" href="">
+                            <a className="nav-link text-dark" href="src/routes/Top">
                                 BRAND
                             </a>
                         </p>
@@ -93,7 +93,7 @@ function Top(){
                     </li>
                     <li className="nav-item dp1">
                         <p>
-                            <a className="nav-link text-dark" href="">
+                            <a className="nav-link text-dark" href="src/routes/Top">
                                 ESG
                             </a>
                         </p>
@@ -103,7 +103,7 @@ function Top(){
                     </li>
                     <li className="nav-item dp1">
                         <p>
-                            <a className="nav-link text-dark" href="">
+                            <a className="nav-link text-dark" href="src/routes/Top">
                                 MENU
                             </a>
                         </p>
@@ -117,21 +117,21 @@ function Top(){
                     </li>
                     <li className="nav-item dp1">
                         <p>
-                            <a className="nav-link text-dark" href="">
+                            <a className="nav-link text-dark" href="src/routes/Top">
                                 STORE
                             </a>
                         </p>
                         <div className="dp2">
                             <ul>
                                 <li>
-                                    <a href="">주변점포찾기</a>
+                                    <a href="src/routes/Top">주변점포찾기</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li className="nav-item">
                         <p>
-                            <a className="nav-link text-dark" href="">
+                            <a className="nav-link text-dark" href="src/routes/Top">
                                 EVENT
                             </a>
                         </p>
@@ -141,7 +141,7 @@ function Top(){
                     </li>
                     <li className="nav-item">
                         <p>
-                            <a className="nav-link text-dark" href="">
+                            <a className="nav-link text-dark" href="src/routes/Top">
                                 FRANCHISE
                             </a>
                         </p>
@@ -151,7 +151,7 @@ function Top(){
                     </li>
                     <li className="nav-item">
                         <p>
-                            <a className="nav-link text-dark" href="">
+                            <a className="nav-link text-dark" href="src/routes/Top">
                                 HANSOT
                             </a>
                         </p>

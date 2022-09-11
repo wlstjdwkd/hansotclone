@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import Top from "./Top";
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import blossom from './img/blossom.jpg';
-import azalea from './img/Azalea.jpg';
+import blossom from '../img/blossom.jpg';
+import azalea from '../img/Azalea.jpg';
 
 
 function Menu_list(props){
