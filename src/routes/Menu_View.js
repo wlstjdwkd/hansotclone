@@ -63,8 +63,7 @@ function Menu_View(){
         const req = {
             member_id:cookies_id,
             menu_id:menuID,
-            // order_date:order_date,
-            // option_id:option_id,
+            option_id:option_id,
         };
         const res = await fetch("http://localhost:5000/order",{
             method:"POST",

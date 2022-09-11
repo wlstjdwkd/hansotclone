@@ -250,13 +250,12 @@ app.post("/order", (req,res)=>{
     console.log("주문 백 받음");
     var member_id=req.body.member_id;
     var menu_id=req.body.menu_id;
-    //todo: option추가
-
+    var option=req.body.option_id;
 
     console.log("order number", member_id,menu_id);
 
-
     conn.execute("insert into order1(order1_id, order_date, member_id, menu_id) values (order1_seq.nextval, to_char(sysdate,'yyyy.mm.dd hh24:mi'), '" + member_id + "','" + menu_id + "')", function (err, result) {
+
         if (err) {
             console.log("등록중 에러가 발생했어요!!", err);
             res.status(401).send({message: "주문 실패"});
@@ -265,9 +264,21 @@ app.post("/order", (req,res)=>{
         } else {
             //주문 성공
             console.log("주문 성공");
-            console.log("result : ", result);
+            console.log("option : ", option);
 
+            for(let i=0; i<option.length; i++){
+                conn.execute("insert into order1_option1 values (order1_option1_seq.nextval, order1_seq.currval,'" + option[i] + "')", function (err,result){
+                    if (err) {
+                    } else {
+                        //메뉴 상세 조회 성공
+                        console.log("result : ", result);
+                        //res.status(200).send({message: "메뉴조회 성공"});
 
+                        // res.writeHead(200, {"ContentType": "text/html"});
+
+                    }
+                })
+            }
 
             // res.writeHead(200, {"ContentType": "text/html"});
 
@@ -291,6 +302,7 @@ app.post("/myPage",(req,res)=>{
             res.end("fail!!");
         } else {
             //마이페이지 조회 성공
+
             console.log("result : ", result);
             //res.status(200).send({message: "메뉴조회 성공"});
 
