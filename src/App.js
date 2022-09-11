@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import '../App.css';
-import Top from "./Top";
+import './App.css';
+import Top from "./routes/Top";
 // import main from "./main";
-import Login from "./Login";
+import Login from "./routes/Login";
 import { useEffect } from "react";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
                         <div className="col-md-12 bg-secondary area_sc">
                             <figure>
                                 <span>
-                                    <img src={require('../img/main01.jpg')}/>
+                                    <img src={require('./img/main01.jpg')}/>
                                 </span>
                                 <figcaption>
                                     <p>
@@ -50,7 +50,7 @@ function App() {
                         <div className="col-md-12 bg-secondary area_sc">
                             <figure>
                                 <span>
-                                    <img src={require('../img/main02.jpg')}/>
+                                    <img src={require('./img/main02.jpg')}/>
                                 </span>
                                 <figcaption>
                                     <p>
@@ -96,7 +96,7 @@ function App() {
                     </div>
                     <div className="col-6 col-sm-4 bg-secondary">
                         <div className="col-12">
-                            <img src={require('../img/main03.jpg')}/>
+                            <img src={require('./img/main03.jpg')}/>
                             <p>
                                 <span className="d-block">
                                     한솥은 언제나 고객님과 점주님들의
@@ -112,7 +112,7 @@ function App() {
                     </div>
                     <div className="col-6 col-sm-4">
                         <div className="col-12 bg-secondary">
-                            <img src={require('../img/main04.jpg')}/>
+                            <img src={require('./img/main04.jpg')}/>
                             <p>
                     <span className="d-block">
                         한솥과 함께하는 가맹점주들의
@@ -148,7 +148,7 @@ function App() {
                                     <span className="d_block text-light">리드하는 글로벌 종합외식기업 입니다.</span>
                                 </p>
                                 <span>
-                                <a href="src/routes/App" className="text-light">브랜드 철학</a>
+                                <a href="src/App" className="text-light">브랜드 철학</a>
                             </span>
                             </div>
 
@@ -160,7 +160,7 @@ function App() {
                 <br/>
                 <div className="bg-secondary">
                     <div>
-                        <img src={require('../img/main05.jpg')}/>
+                        <img src={require('./img/main05.jpg')}/>
                     </div>
                     <h2>
                         <span className="d-block">식재료 앞에서는</span>

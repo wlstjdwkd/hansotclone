@@ -1,5 +1,5 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import App from './routes/App';
+import App from './App';
 import Login from './routes/Login';
 import Signup from "./routes/Signup";
 import SignupAgree from "./routes/SignupAgree";

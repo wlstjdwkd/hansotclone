@@ -250,13 +250,10 @@ app.post("/order", (req,res)=>{
     console.log("주문 백 받음");
     var member_id=req.body.member_id;
     var menu_id=req.body.menu_id;
-    var nowdate= "to_char(sysdate,'yyyy.mm.dd hh24:mi')";
+    //todo: option추가
 
 
     console.log("order number", member_id,menu_id);
-    // var order_date = req.body.order_date;
-
-
 
 
     conn.execute("insert into order1(order1_id, order_date, member_id, menu_id) values (order1_seq.nextval, to_char(sysdate,'yyyy.mm.dd hh24:mi'), '" + member_id + "','" + menu_id + "')", function (err, result) {
@@ -277,6 +274,30 @@ app.post("/order", (req,res)=>{
             res.end("success!!");        }
     });
 });
+
+//마이페이지
+app.post("/myPage",(req,res)=>{
+    var memberID= req.body.member_id;
+
+    console.log("마이페이지 백 받음");
+    console.log("멤버아이디: "+req.body.member_id);
+    conn.execute("select o.order_date, m.name, m.price from order1 o, (select name, price from menu where menu_id=(select distinct menu_id from order1 where member_id=:1)) m where member_id=:1 ",[memberID] ,function (err,result){
+        if (err) {
+            console.log("마이페이지 조회 중 에러가 발생했어요!!", err);
+            res.status(401).send({message: "메뉴 조회 실패"});
+            // res.writeHead(500, {"ContentType": "text/html"});
+            res.end("fail!!");
+        } else {
+            //마이페이지 조회 성공
+            console.log("result : ", result);
+            //res.status(200).send({message: "메뉴조회 성공"});
+
+            // res.writeHead(200, {"ContentType": "text/html"});
+
+            res.send(result);
+        }
+    });
+})
 
 app.listen(5000,function (){
     console.log('listening on 5000');

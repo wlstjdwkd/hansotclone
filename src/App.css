@@ -54,7 +54,7 @@ img{
     width:100%;
     height:600px;
 
-    background:url("img/main_visual_02.jpg") 50% 50% no-repeat;
+    background:url("../src/img/main_visual_02.jpg") 50% 50% no-repeat;
     background-size:cover;
     background-position:center top;
     transition:transform 1.5s ease;

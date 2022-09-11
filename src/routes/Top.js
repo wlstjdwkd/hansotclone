@@ -47,9 +47,28 @@ function Top(){
             // alert(data.message);
         }
     }
-    // useEffect(()=>{
-    //
-    // },[]);
+    console.log("member_id:"+result);
+
+
+    const onMyPage = async (e)=>{
+        e.preventDefault();
+        const req = {
+            member_id:result,
+        };
+        console.log(req.member_id);
+        const res= await fetch("http://localhost:5000/myPage",{
+            method:"POST",
+            headers: { "Content-Type": "application/json"},
+            body:JSON.stringify(req),
+        });
+        data1=await res.json();
+        if(res.ok){
+            navigate('/myPage', {state:data1.rows});
+        }
+        else{
+
+        }
+    }
 
     return(
         <>
@@ -62,7 +81,7 @@ function Top(){
                         <Link className="nav-link" to="/" onClick={removeCookieFunc}>로그아웃</Link>
                     </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/myPage">마이페이지</Link>
+                                <button className="nav-link" onClick={onMyPage}>마이페이지</button>
                             </li>
                         </ul>):(
                             <ul className="nav justify-content-end">

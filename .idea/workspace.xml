@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2713dc4e-76a9-4cce-afc4-9dee0a10a993" name="Changes" comment="220908 order">
-      <change afterPath="$PROJECT_DIR$/src/routes/Mypage.js" afterDir="false" />
+    <list default="true" id="2713dc4e-76a9-4cce-afc4-9dee0a10a993" name="Changes" comment="220908 order optionX complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu_View.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Menu_View.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Menu_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SignupAgree.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/SignupAgree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Top.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Top.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Menu_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Menu_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Mypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Mypage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Top.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Top.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,15 +55,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\work\hsd2\src" />
+      <recent name="C:\workspace\work\hsd2\src\components" />
       <recent name="C:\workspace\work\hsd2\src\routes" />
       <recent name="C:\workspace\work\hsd2\server" />
       <recent name="C:\workspace\work\hsd2" />
-      <recent name="C:\workspace\work\hsd2\src" />
-      <recent name="C:\workspace\work\hsd2\server\db" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.server.js">
-    <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/routes/App.js" working-dir="$PROJECT_DIR$/src">
+    <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/App.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
     <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/server.js" working-dir="$PROJECT_DIR$">
@@ -96,7 +93,7 @@
       <workItem from="1662509199938" duration="23530000" />
       <workItem from="1662547668482" duration="5261000" />
       <workItem from="1662604525133" duration="6336000" />
-      <workItem from="1662869107122" duration="6615000" />
+      <workItem from="1662869107122" duration="19017000" />
     </task>
     <task id="LOCAL-00001" summary="220905">
       <created>1662387069940</created>
@@ -161,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662564537852</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="220908 order optionX complete">
+      <created>1662878375717</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1662878375717</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +193,7 @@
     <MESSAGE value="220907 not need file delete" />
     <MESSAGE value="220907 option complete" />
     <MESSAGE value="220908 order" />
-    <option name="LAST_COMMIT_MESSAGE" value="220908 order" />
+    <MESSAGE value="220908 order optionX complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="220908 order optionX complete" />
   </component>
 </project>

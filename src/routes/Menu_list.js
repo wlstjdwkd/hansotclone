@@ -157,50 +157,6 @@ function Menu_list(props){
                     <div className="col-9">
                         <div className="row">
                             {rendering()}
-                            {/*<div className="col-4">*/}
-                            {/*    <a href="/menu_view">*/}
-                            {/*        <img src={require('./img/newMenu1.jpg')}/>*/}
-                            {/*        <p className="d-block">*/}
-                            {/*            아보카도 게맛살 명란비빔밥*/}
-                            {/*        </p>*/}
-                            {/*        <p>*/}
-                            {/*            6500원*/}
-                            {/*        </p>*/}
-                            {/*    </a>*/}
-                            {/*</div>*/}
-                            {/*<div className="col-4">*/}
-                            {/*    <a href="">*/}
-                            {/*        <img src={require('./img/newMenu2.jpg')}/>*/}
-                            {/*        <p className="d-block">*/}
-                            {/*            아보카도 소고기 명란비빔밥*/}
-                            {/*        </p>*/}
-                            {/*        <p>*/}
-                            {/*            6500원*/}
-                            {/*        </p>*/}
-                            {/*    </a>*/}
-                            {/*</div>*/}
-                            {/*<div className="col-4">*/}
-                            {/*    <a href="">*/}
-                            {/*        <img src={require('./img/newMenu3.jpg')}/>*/}
-                            {/*        <p className="d-block">*/}
-                            {/*            핫 치즈 닭갈비덮밥*/}
-                            {/*        </p>*/}
-                            {/*        <p>*/}
-                            {/*            5900원*/}
-                            {/*        </p>*/}
-                            {/*    </a>*/}
-                            {/*</div>*/}
-                            {/*<div className="col-4">*/}
-                            {/*    <a href="">*/}
-                            {/*        <img src={require('./img/newMenu1.jpg')}/>*/}
-                            {/*        <p className="d-block">*/}
-                            {/*            오리지널 치즈 닭갈비덮밥*/}
-                            {/*        </p>*/}
-                            {/*        <p>*/}
-                            {/*            5900원*/}
-                            {/*        </p>*/}
-                            {/*    </a>*/}
-                            {/*</div>*/}
                         </div>
 
                     </div>
