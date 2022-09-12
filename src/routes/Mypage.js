@@ -3,10 +3,19 @@ import {useLocation} from "react-router-dom";
 
 function Mypage(){
     const { state } =useLocation();
+    state.push([null,null,null,null,null,null]);
+
     console.log(state);
     const rendering = () =>{
         const result = [];
         for(let i=0; i<state.length; i++){
+            if(state[i][4]!=null){
+                console.log(state[i][3]);
+                if(state[i][3]==state[i+1][3]){
+                    state[i][4] +=  state[i+1][4];
+                    state[i+1][4] =null;
+                }
+            }
             result.push(
                 //todo: option
                 //내용
@@ -21,7 +30,7 @@ function Mypage(){
                         {state[i][2]}
                     </div>
                     <div className="border col-2">
-                        {/*주문처리상태*/}
+                        {state[i][4]}
                     </div>
                 </div>
 
