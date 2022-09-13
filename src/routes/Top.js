@@ -70,17 +70,17 @@ function Top(){
                     { result ?
                         (   <ul className="nav justify-content-end">
                         <li className="nav-item">
-                        <Link className="nav-link" to="/" onClick={removeCookieFunc}>로그아웃</Link>
+                        <Link className="nav-link btn btn-light" to="/" onClick={removeCookieFunc}>로그아웃</Link>
                     </li>
                             <li className="nav-item">
-                                <button className="nav-link" onClick={onMyPage}>마이페이지</button>
+                                <button className="nav-link btn btn-light" onClick={onMyPage}>마이페이지</button>
                             </li>
                         </ul>):(
                             <ul className="nav justify-content-end">
                             <li className="nav-item">
-                        <Link className="nav-link" to='/login'>로그인</Link>
+                        <Link className="nav-link btn btn-light" to='/login'>로그인</Link>
                     </li><li className="nav-item">
-                        <Link className="nav-link" to="/signupAgree">회원가입</Link>
+                        <Link className="nav-link btn btn-light" to="/signupAgree">회원가입</Link>
                         </li>
                             </ul>)}
                 </ul>

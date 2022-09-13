@@ -53,8 +53,8 @@ function App() {
                 <br/>
                 {/*가운데 세개*/}
                 <div className="row justify-content-md-center">
-                    <div className="col-12 col-sm-4">
-                        <div className="col-12 bg-warning">
+                    <div className="col-12 col-sm-4 bg-warning border">
+                        <div className="col-12">
                             <h2>
                             <span className="d-block">
                                 가맹점주에게도
@@ -76,7 +76,7 @@ function App() {
                             </p>
                         </div>
                     </div>
-                    <div className="col-6 col-sm-4 bg-secondary">
+                    <div className="col-6 col-sm-4 bg-secondary border">
                         <div className="col-12">
                             <img src={require('./img/main03.jpg')}/>
                             <p>
@@ -92,8 +92,8 @@ function App() {
                             </span>
                         </div>
                     </div>
-                    <div className="col-6 col-sm-4">
-                        <div className="col-12 bg-secondary">
+                    <div className="col-6 col-sm-4 bg-secondary border">
+                        <div className="col-12">
                             <img src={require('./img/main04.jpg')}/>
                             <p>
                     <span className="d-block">

@@ -62,26 +62,30 @@ function Login({authenticated}){
 
     return(<>
         <Top></Top>
-        <div className="col-7">
-            <h2>
-                로그인
-            </h2>
-            <form onSubmit={(e)=>{
-                onLogin(e)
-            }}>
-                <input type="text" name='web_id' value={web_id} onChange={onIDHandler} placeholder="아이디"/>
-                <input type="password" name='password' value={password} onChange={onPasswordHandler} placeholder="비밀번호"/>
+        <div className="container">
+            <div className="col-12 text-center">
+                <h2>
+                    로그인
+                </h2>
+                <br/>
 
-                <div>
-                    <button className="btn-warning" type="submit">
-                        로그인
-                    </button>
-                </div>
-            </form>
-        </div>
-        <div className="col-5">
+                <form onSubmit={(e)=>{
+                    onLogin(e)
+                }}>
+                    <input type="text" name='web_id' value={web_id} onChange={onIDHandler} placeholder="아이디"/>
+                    <input type="password" name='password' value={password} onChange={onPasswordHandler} placeholder="비밀번호"/>
 
+                    <br/>
+                    <br/>
+                    <div>
+                        <button className="btn-warning" type="submit">
+                            로그인
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
+
     </>);
 }
 
