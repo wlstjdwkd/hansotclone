@@ -2,7 +2,6 @@ import '../App.css';
 import React, { useState, useEffect } from 'react';
 import {BrowserRouter, Link, Route, Routes as Router} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import Login from "./Login";
 import { useCookies } from 'react-cookie';
 
 
@@ -26,25 +25,18 @@ function Top(){
         window.location.reload();
     }
 
-    const [menu_list,setMenu_List] = useState([]);
     const onMenu_list= async (e)=>{
-        // e.preventDefault();
         const res= await fetch("http://localhost:5000/menu_list",{
             method:"GET",
 
         });
         data1=await res.json();
-        // data1=data1.stringify();
         if (res.ok) {
             console.log("menu: ", data1);
             console.log(data1.rows.length);
             console.log(data1.rows[0][1]);
             navigate('/menu_list', { state:data1.rows });
-            // window.location.replace("/menu_list");
-            // alert(data.message);
         } else {
-            // console.log(data);
-            // alert(data.message);
         }
     }
     console.log("member_id:"+result);
@@ -181,12 +173,6 @@ function Top(){
                 </ul>
             </nav>
         </div>
-            {/*<Routes>*/}
-            {/*    <Route path="/login" component={Login} />*/}
-            {/*</Routes>*/}
-                {/*<Route path="/login" element={<Login />}></Route>*/}
-
-        {/*</Router>*/}
             </>
     );
 }

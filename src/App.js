@@ -1,30 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Link } from 'react-router-dom';
 import './App.css';
 import Top from "./routes/Top";
-// import main from "./main";
-import Login from "./routes/Login";
-import { useEffect } from "react";
 
 function App() {
-    // window.onload = () => {
-    //     let bg = document.querySelector(".main_hansot .main_hansot_bg");
-    //     console.log(bg);
-    //     bg.addEventListener("mouseenter", (event) => {
-    //         event.target.classList.add("on");
-    //         console.log("mouseenter");
-    //     });
-    //     bg.addEventListener("mouseleave", (event) => {
-    //         event.target.classList.remove("on");
-    //         console.log("mouseleave");
-    //     });
-    // };
 
     return (<>
             <Top> </Top>
 
             <div className="container">
-                {/*위에 두개*/}
                 <div className="row justify-content-md-center">
                     <div className="col-md-6">
                         <div className="col-md-12 bg-secondary area_sc">

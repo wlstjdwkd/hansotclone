@@ -17,8 +17,6 @@ function Menu_View(){
     console.log("menu_view_state_menu: "+location.state.menu);
     console.log("menu_view_state_option: "+location.state.option);
     const [member_id,setMember_id] = useState("");
-    const [menu_id, setMenu_id] =useState("");
-    const [order_date,setOrder_date]=useState("");
     const [option_id,setOption_id] = useState([]);
 
     const menu=location.state.menu;
@@ -34,11 +32,12 @@ function Menu_View(){
             option_sum_txt.innerHTML = Number(option_sum_txt.innerHTML)+ Number(e.target.value);
             total.innerHTML= Number(total.innerHTML)+ Number(e.target.value);
             setOption_id(option_id=>[...option_id, e.target.id]);
-
+            console.log("option_id: "+option_id);
         }else{
             option_sum_txt.innerHTML = Number(option_sum_txt.innerHTML)- Number(e.target.value);
             total.innerHTML= Number(total.innerHTML) - Number(e.target.value);
-            //setoption빼는거 구현안했음
+            setOption_id(option_id.filter((it)=> it !== e.target.id));
+            console.log("option_id: "+option_id);
         }
     }
 
@@ -50,7 +49,6 @@ function Menu_View(){
     else if(menu[0]==3){
         img_url = azalea;
     }
-
 
     ////////////////////////////
     const onOrder = async (e)=>{

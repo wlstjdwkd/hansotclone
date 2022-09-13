@@ -62,7 +62,6 @@ function Menu_list(props){
         <>
             <Top></Top>
             <p>
-                {/*{menu_list}*/}
 
             </p>
             <div className="container">

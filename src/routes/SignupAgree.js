@@ -38,8 +38,6 @@ function SignupAgree(){
                     </p>
                 </div>
 
-                {/**/}
-
                 <div className="col-8">
                     <h4>이용약관</h4>
                     <div>

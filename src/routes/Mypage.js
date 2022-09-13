@@ -23,8 +23,6 @@ function Mypage(){
                 state[i][4]= "-";
             }
             result.push(
-                //todo: option
-                //내용
                 <div className="row d-flex text-center bg-light align-items-center ">
                     <div className="border col-2">
                         {state[i][0]}
