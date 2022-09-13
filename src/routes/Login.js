@@ -1,12 +1,8 @@
 import React, { useState,useEffect } from "react";
-import {Link, Redirect } from "react-router-dom";
 import Top from "./Top";
 import { useCookies } from "react-cookie";
-import { useDispatch } from "react-redux";
-import { withRouter } from 'react-router-dom';
 
 function Login({authenticated}){
-    // const dispatch = useDispatch();
 
     const [web_id,setWeb_id] = useState("");
     const [password,setPassword] = useState("");
@@ -27,10 +23,6 @@ function Login({authenticated}){
     const getCookieFunc = (param) =>{
         let result = "getCookie : "+cookies.id;
     }
-
-    // const [loggedInInfo, setLoggedInInfo]=useState({
-    //
-    // })
 
     const onIDHandler = (e) =>{
         setWeb_id(e.currentTarget.value);

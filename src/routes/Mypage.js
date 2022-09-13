@@ -9,17 +9,23 @@ function Mypage(){
     const rendering = () =>{
         const result = [];
         for(let i=0; i<state.length; i++){
+            var cnt=1;
+
             if(state[i][4]!=null){
-                console.log(state[i][3]);
-                if(state[i][3]==state[i+1][3]){
-                    state[i][4] +=  state[i+1][4];
-                    state[i+1][4] =null;
+                console.log("state[i][3] : "+state[i][3]);
+                state[i][2]= Number(state[i][2])+Number(state[i][5]);
+                while(state[i][3]==state[i+cnt][3]){
+                    state[i][4] += "\n"+ state[i+cnt][4];
+                    state[i][2]= Number(state[i][2])+Number(state[i+cnt][5]);
+                    cnt++;
                 }
+            }else{
+                state[i][4]= "-";
             }
             result.push(
                 //todo: option
                 //내용
-                <div className="row d-flex text-center bg-secondary align-items-center ">
+                <div className="row d-flex text-center bg-light align-items-center ">
                     <div className="border col-2">
                         {state[i][0]}
                     </div>
@@ -35,6 +41,9 @@ function Mypage(){
                 </div>
 
             );
+            console.log("cnt: "+cnt);
+            i=i+cnt-1;
+
         }
 
 
@@ -56,7 +65,7 @@ function Mypage(){
                     상품구매금액
                 </div>
                 <div className="border col-2">
-                    주문처리상태
+                    추가 옵션
                 </div>
             </div>
             {rendering()}

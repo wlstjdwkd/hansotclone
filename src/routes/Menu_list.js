@@ -9,16 +9,8 @@ function Menu_list(props){
     const navigate = useNavigate();
     const { state } = useLocation();
     console.log("menu_state: "+state[0][1]);
-    // console.log("menuList:"+menu_list);
-    // console.log("data: "+ Top.data1);
     let img_url;
     let data1;
-    // let menu_id;
-
-    // const onMenu_view = (e) =>{
-    //     console.log("메뉴뷰에서 보내기직전: "+i)
-    //     navigate(`/menu_view?id=${menu_id}`,{ state:state[0] })
-    // }
 
     const rendering = () =>{
         const result = [];
